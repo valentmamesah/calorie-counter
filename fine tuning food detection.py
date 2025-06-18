@@ -90,7 +90,6 @@ from collections import Counter
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# Ganti path ke dataset kamu
 DATASET_PATH = "/content/Makanan-humic-1"
 splits = ['train', 'valid', 'test']
 
@@ -112,7 +111,7 @@ for split in splits:
                 class_id = line.strip().split()[0]
                 class_counts[class_id] += 1
 
-# 3. Baca nama kelas dari file data.yaml
+# 3. Kelas
 import yaml
 with open(os.path.join(DATASET_PATH, "data.yaml"), "r") as f:
     data_yaml = yaml.safe_load(f)
@@ -223,11 +222,10 @@ for i, result in enumerate(results_list):
 
 import os
 
-# Buat folder utama package
 os.makedirs("food_calorie_estimator", exist_ok=True)
 os.makedirs("food_calorie_estimator/model", exist_ok=True)
 
-# Inisialisasi __init__.py agar dikenali sebagai package
+# Inisialisasi __init__.py 
 with open("food_calorie_estimator/__init__.py", "w") as f:
     f.write("# Food Calorie Estimator Package")
 
@@ -317,7 +315,6 @@ with open("example_usage.py", "w") as f:
 from google.colab import files
 # uploaded = files.upload()
 
-# Pindahkan file model ke folder package
 # !mv yolo_food.pt food_calorie_estimator/model/
 
 !cp /content/runs/detect/train/weights/best.pt food_calorie_estimator/model/yolo_food.pt
@@ -334,7 +331,7 @@ from food_calorie_estimator.kalori_reference import kalori_dict
 # 2. Inisialisasi detektor dengan model di dalam package
 detector = FoodDetector(model_path="food_calorie_estimator/model/yolo_food.pt")
 
-# 3. Gambar input (misalnya dari user upload atau file lokal)
+# 3. Gambar input 
 image_path = "/content/nasi_lemak_test_53_png.png"
 
 # 4. Lakukan deteksi makanan
