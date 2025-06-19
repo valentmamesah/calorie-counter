@@ -1,4 +1,3 @@
-
 kalori_dict = {
     'Anchovies': 60,
     'Boiled-Egg': 78,
