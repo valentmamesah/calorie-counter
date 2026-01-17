@@ -1,4 +1,14 @@
-kalori_dict = {
+"""
+Food Calorie Reference Module
+
+This module contains a dictionary of calorie values for various food items
+detected by the YOLO food detection model. All values are in kilocalories (kcal)
+based on standard serving sizes.
+"""
+
+# Calorie reference dictionary for detected food items
+# Values are in kilocalories (kcal) per standard serving
+KALORI_DICT = {
     'Anchovies': 60,
     'Boiled-Egg': 78,
     'Cah Kangkung': 40,
@@ -16,5 +26,5 @@ kalori_dict = {
     'Sambal': 30,
     'Telur Balado': 120,
     'Tempe Goreng': 120,
-    'curry': 180
+    'Curry': 180
 }
